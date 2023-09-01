@@ -54,11 +54,3 @@ CREATE TABLE Availability (
 	WeekDayName_Ref		NVARCHAR(9)	REFERENCES WeekDays (WeekDayName),
 	PRIMARY KEY (Practitioner_Ref, WeekDayName_Ref)
 )
-
-CREATE TABLE Appointment (
-	Practitioner_Ref	INT		REFERENCES Practitioner (Practitioner_ID),
-	AppDate				DATE	NOT NULL,
-	AppStartTime		TIME	NOT NULL,
-	Patient_Ref			INT		NOT NULL	REFERENCES Patient (Patient_ID),
-	PRIMARY KEY (Practitioner_Ref, AppDate, AppStartTime)
-)
